@@ -1,0 +1,83 @@
+@use '../../../styles/abstract/' as a;
+
+.slider {
+  width: 100%;
+  position: relative;
+  height: 50vh;
+  @include a.centerItem;
+  background: var(--primaryBlack);
+
+  @include a.breakpoint(tablet) {
+    height: 100vh;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+  }
+
+  &__slideItems {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    @include a.centerItem;
+    @include a.breakpoint(tablet) {
+      height: 100vh;
+    }
+  }
+
+  &__sliderImage {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__sliderContent {
+    min-height: 20rem;
+    width: 20rem;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(80%, -50%);
+    transition: opacity 0.2s ease 0.25s, transform 0.56s ease 0.25s;
+    @include a.centerItem;
+    flex-direction: column;
+    @include a.breakpoint(tablet) {
+      width: 30rem;
+    }
+  }
+
+  &__rightArrow,
+  &__leftArrow {
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    background: var(--nextButtonColor);
+    top: 50%;
+    z-index: 5;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+    @include a.breakpoint(tablet) {
+      display: block;
+    }
+  }
+
+  &__rightArrow {
+    right: 1.5rem;
+  }
+
+  &__leftArrow {
+    left: 1.5rem;
+    transform: rotate(180deg);
+  }
+}

@@ -1,0 +1,18 @@
+@use '../abstract/' as a;
+
+:root {
+  --primaryGreen: rgb(172, 234, 0);
+  --cyan-bluish-gray: rgb(70, 71, 71);
+  --cyan-bluish-gray2: rgb(213, 223, 230);
+  --secondaryWhite: rgb(255, 255, 255, 0.8);
+  --primaryBlack: rgb(0, 0, 0);
+  --sideBarColor: rgba(0, 0, 0, 0.95);
+  --nextButtonColor: rgba(0, 0, 0, 0.4);
+  --primaryWhite: rgb(255, 255, 255);
+  --spotifyColor: rgb(45, 188, 88);
+  --appleColor: rgb(199, 100, 244);
+  --youTubeColor: rgb(252, 0, 42);
+
+  --fontFamily1: 'Six Caps', 'Six Caps Placeholder', sans-serif;
+  --fontFamily2: 'Roboto', sans-serif;
+}

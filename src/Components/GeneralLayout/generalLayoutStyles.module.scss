@@ -1,0 +1,15 @@
+@use '../../../styles/abstract/' as a;
+
+.main {
+  overflow: hidden;
+  // scroll-snap-type: y mandatory;
+  // overflow-y: auto;
+  // height: 100vh;
+  // scroll-behavior: smooth;
+}
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  @include a.centerItem;
+}

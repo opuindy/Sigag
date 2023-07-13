@@ -1,0 +1,73 @@
+@use '../../../styles/abstract/' as a;
+
+.listen {
+  width: 100%;
+  height: 100%;
+  @include a.centerItem;
+  gap: 1rem;
+
+  &__svgContainer {
+    @include a.centerItem;
+    justify-content: space-between;
+    gap: 0.4rem;
+    width: 4rem;
+    font-weight: a.weight(bold);
+    @include a.breakpoint(tablet) {
+      width: 5rem;
+    }
+  }
+
+  &__span {
+    display: block;
+
+    font-weight: a.weight(bold);
+  }
+
+  &__textContainer {
+    height: a.rem(36);
+    overflow: hidden;
+  }
+
+  &__text {
+    @include a.centerItem;
+    margin-block: 0;
+    transition: transform 0.3s ease;
+    height: a.rem(36);
+    font-size: a.rem(18);
+    font-weight: a.weight(bold);
+    cursor: pointer;
+    &_1 {
+      transform: translateY(0%);
+    }
+    &_2 {
+      transform: translateY(100%);
+    }
+  }
+
+  &__textContainer:hover &__text {
+    &_1 {
+      transform: translateY(-100%);
+    }
+    &_2 {
+      transform: translateY(-100%);
+    }
+  }
+
+  &__increaseFontSize {
+    font-size: a.rem(20);
+    @include a.breakpoint(tablet) {
+      font-size: a.rem(30);
+    }
+  }
+
+  &__increaseSpanFontSize {
+    @include a.breakpoint(tablet) {
+      font-size: 1.7rem;
+      font-weight: a.weight(bold);
+    }
+  }
+}
+
+.smallFont {
+  font-size: 0.8rem;
+}

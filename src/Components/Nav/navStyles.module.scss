@@ -1,0 +1,190 @@
+@use '../../../styles/abstract/' as a;
+
+.header {
+  width: 100%;
+  position: fixed;
+  @include a.centerItem;
+  padding-block: a.$padding-veryTiny;
+  z-index: 10;
+  transition: all 0.3s ease;
+  @include a.breakpoint(tablet) {
+    padding-block: a.$padding-small;
+  }
+
+  &__navContainer {
+    width: 100%;
+    @include a.centerItem;
+    flex-direction: column;
+    // gap: 1.5rem;
+    justify-content: space-between;
+    overflow-x: hidden;
+
+    @include a.breakpoint(tablet) {
+      padding-inline: a.$padding-small;
+      flex-direction: row;
+    }
+  }
+
+  &__hamburgerLogoContainer {
+    padding-inline: a.$padding-tiny;
+    width: 100%;
+    @include a.centerItem;
+    justify-content: space-between;
+    @include a.breakpoint(tablet) {
+      padding-inline: 0;
+      width: max-content;
+    }
+  }
+
+  &__hamburger {
+    @include a.breakpoint(tablet) {
+      display: none;
+    }
+  }
+
+  &__logoContainer {
+    width: 7rem;
+    @include a.breakpoint(tablet) {
+      width: 10rem;
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    margin-right: auto;
+    @include a.centerItem;
+    transform: translateX(-100%);
+    height: 0;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1.2rem;
+    transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+    background: var(--sideBarColor);
+    border-top-right-radius: a.$border-radius;
+    @include a.breakpoint(tablet) {
+      height: auto;
+      display: flex;
+      transform: translateX(0);
+      background: transparent;
+      width: max-content;
+      margin-right: 0;
+      margin-top: 0;
+    }
+  }
+
+  &__isOpen {
+    transform: translateX(0);
+    height: auto;
+  }
+
+  &__LinksContainer {
+    overflow: hidden;
+    @include a.centerItem;
+    width: 100%;
+    height: 93vh;
+    @include a.breakpoint(tablet) {
+      height: auto;
+    }
+  }
+
+  &__LinkItems {
+    @include a.centerItem;
+    flex-direction: column;
+    padding: 0;
+    list-style-type: none;
+    gap: 1.5rem;
+    margin-top: 8rem;
+    margin-bottom: auto;
+    @include a.breakpoint(tablet) {
+      margin-block: auto;
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  &__LinkList {
+    opacity: 0;
+    transform: translateX(a.rem(-20));
+    transition: all ease-in-out 0.6s;
+    @include a.centerItem;
+    color: var(--primaryWhite);
+
+    @include a.breakpoint(tablet) {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  &__isOpen &__LinkList {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &__Link {
+    display: block;
+    padding: 0.8rem 1.2rem;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  &__Link::before {
+    @include a.breakpoint(tablet) {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 68%;
+      height: 0.1rem;
+      background: var(--primaryGreen);
+      transform: translateX(-50%) scaleX(0);
+      transition: transform 0.6s cubic-bezier(1, 0, 0, 1);
+    }
+  }
+
+  &__Link:hover::before {
+    @include a.breakpoint(tablet) {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+
+  &__socialIconsContainer {
+    display: none;
+    height: max-content;
+    width: max-content;
+    position: absolute;
+    top: a.rem(100);
+    right: 2.2rem;
+    @include a.breakpoint(tablet) {
+      display: block;
+    }
+  }
+
+  &__navSocialIconsContainer {
+    display: block;
+    height: max-content;
+    width: max-content;
+    position: absolute;
+    bottom: 15%;
+    left: 0%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all 0.6s ease-in-out 0.6s;
+    @include a.breakpoint(tablet) {
+      display: none;
+    }
+  }
+
+  &__animateNav {
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.changeBackground {
+  background: var(--primaryWhite);
+}
+
+.changeLinksColor {
+  color: var(--primaryBlack);
+}

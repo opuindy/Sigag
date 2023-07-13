@@ -1,0 +1,98 @@
+@use '../../../styles/abstract/' as a;
+
+.music {
+  width: 100%;
+  height: 55vh;
+  @include a.centerItem;
+  flex-direction: column;
+  position: relative;
+
+  @include a.breakpoint(tablet) {
+    height: 100vh;
+  }
+
+  &__musicText {
+    margin-block: 0;
+    margin-top: auto;
+    margin-bottom: 1rem;
+    margin-right: auto;
+    color: var(--cyan-bluish-gray2);
+    text-transform: uppercase;
+    font-size: clamp(1.4rem, 10vw + a.rem(12), 30rem);
+    font-weight: a.weight(bold);
+    white-space: nowrap;
+    letter-spacing: 0.1em;
+    @include a.breakpoint(tablet) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__viewText {
+    position: absolute;
+    right: a.$padding-small;
+    bottom: 0.7rem;
+    font-size: a.rem(16);
+    font-weight: a.weight(bold);
+    cursor: pointer;
+    z-index: 2;
+    @include a.breakpoint(tablet) {
+      font-size: a.rem(18);
+      bottom: 3rem;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    max-width: a.rem(1000);
+    height: 60vh;
+    margin: auto;
+    margin-top: 2rem;
+    z-index: 2;
+    @include a.breakpoint(tablet) {
+      height: 70vh;
+      margin-top: 12rem;
+    }
+  }
+
+  &__ItemContainer {
+    width: 100%;
+    height: 200px;
+    padding: a.$padding-veryTiny;
+    @include a.centerItem;
+    justify-content: flex-start;
+    flex-direction: column;
+    @include a.breakpoint(tablet) {
+      height: 400px;
+    }
+  }
+
+  &__musicImageContainer {
+    width: 100%;
+    height: 85%;
+    position: relative;
+    @include a.breakpoint(tablet) {
+      height: 80%;
+    }
+  }
+
+  &__musicTitle {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    color: var(--primaryWhite);
+  }
+
+  &__musicImage {
+    object-position: top center;
+  }
+
+  &__linkContainer {
+    width: 100%;
+    height: 15%;
+    @include a.centerItem;
+    @include a.breakpoint(tablet) {
+      height: 15%;
+    }
+  }
+}

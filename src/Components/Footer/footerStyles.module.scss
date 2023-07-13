@@ -1,0 +1,49 @@
+@use '../../../styles/abstract/' as a;
+
+.footer {
+  width: 100%;
+  min-height: 5vh;
+  background: var(--primaryBlack);
+  @include a.centerItem;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.3rem;
+  padding: a.$padding-small;
+
+  @include a.breakpoint(tablet) {
+    flex-direction: row;
+  }
+
+  &__copyrightText,
+  &__copyright,
+  &__logoContainer,
+  &__socialsContainer {
+    @include a.centerItem;
+  }
+
+  &__logoContainer {
+    width: 9rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+
+    @include a.breakpoint(tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__copyright {
+    height: max-content;
+    @include a.breakpoint(tablet) {
+      height: 100%;
+    }
+  }
+
+  &__copyrightText {
+    color: var(--primaryWhite);
+  }
+
+  &__socialsContainer {
+    height: 3rem;
+    overflow: hidden;
+  }
+}

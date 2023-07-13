@@ -1,0 +1,29 @@
+@use '../../../styles/abstract/' as a;
+
+.subscribe {
+  width: 100%;
+  min-height: 85vh;
+  position: relative;
+  @include a.centerItem;
+  flex-direction: column;
+  @include a.breakpoint(tablet) {
+    height: 100vh;
+  }
+
+  &__titleText {
+    margin-block: 0;
+    margin-bottom: 0rem;
+    margin-right: auto;
+    color: var(--cyan-bluish-gray2);
+    text-transform: uppercase;
+    font-size: clamp(1.4rem, 10vw + a.rem(13), 30rem);
+    font-weight: a.weight(bold);
+    white-space: nowrap;
+    letter-spacing: 0.1em;
+    margin-top: auto;
+
+    @include a.breakpoint(tablet) {
+      margin-bottom: 0;
+    }
+  }
+}

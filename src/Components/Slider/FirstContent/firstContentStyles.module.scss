@@ -1,0 +1,11 @@
+@use '../../../../styles/abstract/' as a;
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  @include a.centerItem;
+  @include a.breakpoint(tablet) {
+    margin-top: auto;
+  }
+}

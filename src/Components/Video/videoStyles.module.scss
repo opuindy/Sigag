@@ -1,0 +1,143 @@
+@use '../../../styles/abstract/' as a;
+
+.video {
+  width: 100%;
+  height: 70vh;
+  background: var(--primaryBlack);
+  @include a.centerItem;
+  flex-direction: column;
+  position: relative;
+  @include a.breakpoint(tablet) {
+    height: 107vh;
+  }
+
+  &__videoText {
+    margin-block: 0;
+    margin-bottom: 2rem;
+    margin-right: auto;
+    color: var(--cyan-bluish-gray);
+    font-size: clamp(2.5rem, 10vw + a.rem(16), 30rem);
+    font-weight: a.weight(bold);
+    white-space: nowrap;
+    letter-spacing: 0.1em;
+
+    @include a.breakpoint(tablet) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    height: calc(a.rem(320));
+    padding-block: 2rem;
+    margin: auto;
+    margin-top: 2rem;
+    overflow: hidden;
+    @include a.centerItem;
+    @include a.breakpoint(tablet) {
+      height: calc(a.rem(360) + 14rem);
+      margin-top: 9rem;
+    }
+  }
+
+  &__videoContainer {
+    height: 180px;
+    width: 70%;
+    max-width: a.rem(780);
+    position: relative;
+    z-index: 2;
+    transition: transform 1.3s ease;
+    transform: translateY(110%);
+
+    @include a.breakpoint(tablet) {
+      height: 52vh;
+      width: 80%;
+    }
+  }
+
+  &__videoContainer::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0rem;
+    left: 0rem;
+    border: 1px solid var(--primaryWhite);
+    z-index: -1;
+
+    transition: all 0.5s ease-out 1.3s;
+  }
+
+  &__photoContainer {
+    width: 100%;
+    height: 100%;
+    @include a.centerItem;
+    position: relative;
+  }
+
+  &__photoContainerImage,
+  &__playIconImage {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__playIconContainer {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.8s ease;
+
+    @include a.breakpoint(tablet) {
+      top: 80%;
+      left: 50%;
+      transform: translate(0%, -50%) scale(1);
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: translate(0%, -50%) scale(1.1);
+    }
+  }
+
+  &__viewMoreTextContainer {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 2.8rem;
+    opacity: 0;
+
+    font-size: a.rem(16);
+    font-weight: a.weight(bold);
+    color: var(--cyan-bluish-gray);
+    transition: opacity 0.2s ease 1.36s;
+
+    @include a.breakpoint(desktop) {
+      font-size: a.rem(18);
+      right: 10%;
+      bottom: 50%;
+    }
+  }
+
+  &__viewMoreText {
+    margin-block: 0;
+  }
+
+  &__showViewMoreTextContainer {
+    opacity: 1;
+  }
+
+  &__animate {
+    transform: translateY(0%);
+  }
+
+  &__animate::before {
+    top: 1.3rem;
+    left: 1.3rem;
+  }
+}
