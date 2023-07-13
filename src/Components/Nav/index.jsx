@@ -119,7 +119,11 @@ const Nav = () => {
                     >
                       <NavLink
                         to={link}
-                        className={styles.header__Link}
+                        className={`${styles.header__Link} ${
+                          windowSize.width > 767 && scrollDistance > 600
+                            ? styles.header__Link_changeColor
+                            : ''
+                        }`}
                         target={target ?? ''}
                         rel={rel ?? ''}
                       >

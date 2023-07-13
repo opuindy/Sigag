@@ -141,6 +141,12 @@
     }
   }
 
+  &__Link_changeColor::before {
+    @include a.breakpoint(tablet) {
+      background: var(--primaryBlack);
+    }
+  }
+
   &__Link:hover::before {
     @include a.breakpoint(tablet) {
       transform: translateX(-50%) scale(1);

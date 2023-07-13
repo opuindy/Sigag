@@ -33,11 +33,16 @@
     bottom: 0.7rem;
     font-size: a.rem(16);
     font-weight: a.weight(bold);
-    cursor: pointer;
-    z-index: 2;
+
+    transition: color 0.3s ease;
     @include a.breakpoint(tablet) {
       font-size: a.rem(18);
       bottom: 3rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: var(--hoverColor);
     }
   }
 

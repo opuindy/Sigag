@@ -48,13 +48,15 @@
     font-weight: a.weight(bold);
     color: var(--primaryWhite);
     cursor: pointer;
+    transition: all 0.3s ease;
     @include a.breakpoint(tablet) {
       height: 3.5rem;
       margin-top: 1rem;
     }
 
+    &:hover,
     &[disabled] {
-      opacity: 0.7;
+      background: var(--hoverColor);
     }
   }
 
